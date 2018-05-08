@@ -1,0 +1,62 @@
+<h2>Cartoon Characters</h2>
+<ul class="PEOPLE_LIST">
+  <li *ngFor="let people of people_list" [class.selected]="people === selectedPerson" (click)="onSelect(people)">
+	<span class="badge">{{people.firstName}}</span> {{people.lastName}}
+  </li>
+</ul>
+
+<div *ngIf="selectedPerson">
+
+  <h2>{{ selectedPerson.firstName | uppercase }} Details</h2>
+  <div><span>ID: </span>{{selectedPerson.id | uppercase}}</div>
+  <div>
+    <label>firstName:
+      <input [(ngModel)]="selectedPerson.firstName" placeholder="NA">
+    </label>
+	<br>
+	<label>lastName:
+      <input [(ngModel)]="selectedPerson.lastName" placeholder="NA">
+    </label>
+	<br>
+	<label>Date Of Birth:
+      <input [(ngModel)]="selectedPerson.dateOfBirth" placeholder="NA">
+    </label>
+	<br>
+	<label>Hobbies:
+      <input [(ngModel)]="selectedPerson.hobbies" placeholder="NA">
+    </label>
+	<br>
+	<label>Street:
+      <input [(ngModel)]="selectedPerson.address.street" placeholder="NA">
+    </label>
+	<br>
+	<label>City:
+      <input [(ngModel)]="selectedPerson.address.city" placeholder="NA">
+    </label>
+	<br>
+	<label>Provence:
+      <input [(ngModel)]="selectedPerson.address.province" placeholder="NA">
+    </label>
+	<br>
+	<label>PostalCode:
+      <input [(ngModel)]="selectedPerson.address.postalCode" placeholder="NA">
+    </label>
+	<br>
+	<label>Salary:
+      <input [(ngModel)]="selectedPerson.salary" placeholder="NA">
+    </label>
+	<br>
+	<label>isCanadian:
+      <input [(ngModel)]="selectedPerson.isCanadian" placeholder="Are They Canadian?">
+    </label>
+	<br>
+	<label>ImageUrl:
+      <input [(ngModel)]="selectedPerson.imageUrl" placeholder="Url of the img">
+    </label>
+	<br>
+	<img src="selectedPerson.imageUrl" alt="The individual selected">
+  </div>
+</div>
+
+
+
